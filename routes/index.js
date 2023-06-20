@@ -1,12 +1,16 @@
-var express = require('express');
-var db = require('../database/connection'); // Conexão exposta
-var router = express.Router();
+import express from 'express';
+import MedicoRoutes from './medicoRoutes.js';
+import PacienteRoutes from './pacienteRoutes.js';
+import ConsultaRoutes from './consultaRoutes.js';
+import IndexRoutes from './indexRoutes.js';
 
-console.log("Acessando!"); // mensagem para acesso ao banco 
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('layout', { title: 'Express' });
-});
+const router = (app) => {
+    app.use('/', IndexRoutes);
+    app.use('/paciente', PacienteRoutes);
+    app.use('/medicos', MedicoRoutes);
+    app.use('/consulta', ConsultaRoutes);
+}
+
 
 module.exports = router;
