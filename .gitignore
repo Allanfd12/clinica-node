@@ -1,1 +1,5 @@
+# Pasta de modulos do node
 node_modules
+
+# Pasta de confguração do vscode
+.vscode

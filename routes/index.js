@@ -7,7 +7,7 @@ import IndexRoutes from './indexRoutes.js';
 
 const router = (app) => {
     app.use('/', IndexRoutes);
-    app.use('/paciente', PacienteRouter);
+    app.use('/paciente', PacienteRoutes);
     app.use('/medicos', MedicoRoutes);
     app.use('/consulta', ConsultaRoutes);
 }
