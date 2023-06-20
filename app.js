@@ -1,4 +1,4 @@
-//import routes from './routes/index.js';
+import routes from './routes/index.js';
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -10,7 +10,7 @@ let mustacheExpress = require('mustache-express');
 var app = express();
 
 // inicia rotas
-//routes(app);
+routes(app);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
