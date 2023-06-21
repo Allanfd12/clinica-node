@@ -90,7 +90,7 @@ async function connect() {
     for (let i = 0; i < totalPessoas; i++) {
         const nome = fakerPT_BR.person.firstName();
         const cpf = fakerPT_BR.number.int({ min: 10000000000, max: 99999999999 });
-        const telefone = fakerPT_BR.phone.number();
+        const telefone = fakerPT_BR.phone.number('###########');
         const crm = fakerPT_BR.number.int({max: 999999999});
         const especialidade = fakerPT_BR.person.jobArea();
 
