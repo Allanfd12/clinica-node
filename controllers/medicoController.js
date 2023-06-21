@@ -5,7 +5,7 @@ class MedicoController {
     static async getAll(req, res) {
         try {
             let medicos = await Medico.find();
-            res.render('medicos', { medicos: medicos });
+            res.render('medico', { medicos: medicos });
         } catch (error) {
             console.log(error);
         }
