@@ -34,8 +34,8 @@ hr.h-color {
 }
 
 .logo-texto {
-  font-size: 22px;
-  color: white;
+  font-size: 50px;
+  color: #20B2AA;
 }
 
 .icon {
@@ -63,4 +63,11 @@ hr.h-color {
 .required:after {
   content:" *"; 
   color: red;
+}
+
+.centralizar {
+  display: block!important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 200px !important;
 }
