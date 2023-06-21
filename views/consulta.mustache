@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas</title>
+    </head>
+    <body style="text-align: center">
+        <table>
+        <tr>
+            <th>data</th>
+            <th>hora</th>
+            <th>paciente</th>
+            <th>medico</th>
+        </tr>
+            {{#consultas}}
+            <tr>    
+            <td>{{data}}</td>
+            <td>{{hora}}</td>
+            <td>{{nome_paciente}}</td>
+            <td>{{nome_medico}}</td>
+        </tr>
+
+        {{/consultas}}
+
+        </table>
+    </body>
+</html>
