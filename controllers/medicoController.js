@@ -1,4 +1,4 @@
-import Medico from '../models/medico.js';
+var Medico = require('../models/medico.js');
 
 class MedicoController {
 

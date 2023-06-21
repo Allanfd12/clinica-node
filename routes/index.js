@@ -1,14 +1,14 @@
-import express from 'express';
-import MedicoRoutes from './medicoRoutes.js';
-import PacienteRoutes from './pacienteRoutes.js';
-import ConsultaRoutes from './consultaRoutes.js';
-import IndexRoutes from './indexRoutes.js';
+var express = require('express');
+var MedicoRoutes = require('./medicoRoutes.js');
+var PacienteRoutes = require('./pacienteRoutes.js');
+var ConsultaRoutes = require('./consultaRoutes.js');
+var IndexRoutes = require('./indexRoutes.js');
 
 
 const router = (app) => {
     app.use('/', IndexRoutes);
     app.use('/paciente', PacienteRoutes);
-    app.use('/medicos', MedicoRoutes);
+    app.use('/medico', MedicoRoutes);
     app.use('/consulta', ConsultaRoutes);
 }
 

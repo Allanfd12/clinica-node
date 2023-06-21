@@ -1,4 +1,4 @@
-import Consulta from '../models/consulta.js';
+var Consulta = require('../models/consulta.js');
 
 class ConsultaController {
 

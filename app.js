@@ -1,4 +1,4 @@
-import routes from './routes/index.js';
+var routes = require('./routes/index.js');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');

@@ -1,4 +1,4 @@
-import Paciente from '../models/paciente.js';
+var Paciente = require('../models/paciente.js');
 
 class PacienteController {
 

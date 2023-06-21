@@ -1,5 +1,5 @@
-import express from 'express';
-import ConsultaController from '../controllers/consultaController.js';
+var express = require('express');
+var ConsultaController = require('../controllers/consultaController.js');
 
 const router = express.Router();
 
