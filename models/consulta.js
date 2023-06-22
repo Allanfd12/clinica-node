@@ -14,6 +14,10 @@ class Consulta {
         var result = await global.connection.query(`INSERT INTO consultas SET ?`, consulta);
         return result[0];
     }
+    static async update(id, consulta) {
+        var result = await global.connection.query(`UPDATE consultas SET ? WHERE id = ${id}`, consulta);
+        return result[0];
+    }
 }
 
 module.exports = Consulta;

@@ -20,7 +20,7 @@ class MedicoController {
     }
 
     static async create(req, res) {
-        res.render('medico/criar-teste-back');
+        res.render('medico/criar');
     }
     static async save(req, res) {
         try {
@@ -35,7 +35,27 @@ class MedicoController {
             console.log(error);
         }
     }
-    
+    static async editar(req, res) {
+        try {
+            let medico = await Medico.findById(req.params.id);
+            res.render('medico/editar-teste-back', { medico: medico });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    static async update(req, res) {
+        try {
+            let medico = req.body;
+            // trata campos do formulário
+            medico.telefone = medico.telefone.replace(/\D/g, '');
+            medico.cpf = medico.cpf.replace(/\D/g, '');
+
+            await Medico.update(req.params.id, medico);
+            res.redirect('/medico');
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = MedicoController;

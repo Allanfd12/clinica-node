@@ -8,6 +8,8 @@ router.get('/', ConsultaController.getAll);
 router.get('/criar', ConsultaController.create);
 router.post('/',bodyParser.urlencoded(), ConsultaController.save);
 router.get('/:id', ConsultaController.getOne);
+router.get('/:id/editar', ConsultaController.editar);
+router.post('/:id/update',bodyParser.urlencoded(), ConsultaController.update);
 /*
 router.post('/', ConsultaController.create);
 router.put('/:id', ConsultaController.update);

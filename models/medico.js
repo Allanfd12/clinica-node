@@ -11,8 +11,12 @@ class Medico {
         var medicos = await global.connection.query(`SELECT * FROM medicos WHERE id = ${id}`);
         return medicos[0][0];
     }
-    static async create(consulta) {
-        var result = await global.connection.query(`INSERT INTO medicos SET ?`, consulta);
+    static async create(medico) {
+        var result = await global.connection.query(`INSERT INTO medicos SET ?`, medico);
+        return result[0];
+    }
+    static async update(id, medico) {
+        var result = await global.connection.query(`UPDATE medicos SET ? WHERE id = ${id}`, medico);
         return result[0];
     }
 }
