@@ -10,7 +10,7 @@ async function connect() {
         host: 'localhost',
         port: '3306', //coloque a porta do seu banco de dados
         user: 'root', //coloque o seu usuário
-        password: '', //coloque a sua senha
+        password: 'root', //coloque a sua senha
         database: 'clinica' //crie essa database no seu banco de dados
     });
 
