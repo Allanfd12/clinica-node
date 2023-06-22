@@ -38,7 +38,7 @@ class MedicoController {
     static async editar(req, res) {
         try {
             let medico = await Medico.findById(req.params.id);
-            res.render('medico/editar-teste-back', { medico: medico });
+            res.render('medico/editar', { medico: medico });
         } catch (error) {
             console.log(error);
         }
@@ -51,6 +51,15 @@ class MedicoController {
             medico.cpf = medico.cpf.replace(/\D/g, '');
 
             await Medico.update(req.params.id, medico);
+            res.redirect('/medico');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    static async delete(req, res) {
+        try {
+            await Medico.delete(req.params.id);
+    
             res.redirect('/medico');
         } catch (error) {
             console.log(error);

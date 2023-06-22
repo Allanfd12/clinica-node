@@ -54,6 +54,14 @@ class PacienteController {
             console.log(error);
         }
     }
+    static async delete(req, res) {
+        try {
+            await Paciente.delete(req.params.id);
+            res.redirect('/paciente');
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 }
 
