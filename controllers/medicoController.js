@@ -10,6 +10,14 @@ class MedicoController {
             console.log(error);
         }
     }
+    static async getOne(req, res) {
+        try {
+            let medico = await Medico.findById(req.params.id);
+            res.render('medico/visualizar', { medico: medico });
+        } catch (error) {
+            console.log(error);
+        }
+    }
     
 }
 
