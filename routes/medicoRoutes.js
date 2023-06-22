@@ -8,10 +8,9 @@ router.get('/', MedicoController.getAll);
 router.get('/criar', MedicoController.create);
 router.post('/',bodyParser.urlencoded(), MedicoController.save);
 router.get('/:id', MedicoController.getOne);
+router.get('/:id/editar', MedicoController.editar);
+router.post('/:id/update',bodyParser.urlencoded(), MedicoController.update);
+router.get('/:id/excluir', MedicoController.delete);
 
-/*
-
-router.put('/:id', MedicoController.update);
-router.delete('/:id', MedicoController.delete);*/
 
 module.exports = router;

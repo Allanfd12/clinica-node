@@ -33,6 +33,35 @@ class PacienteController {
         }
     }
     
+    static async editar(req, res) {
+        try {
+            let paciente = await Paciente.findById(req.params.id);
+            res.render('paciente/editar-teste-back', { paciente: paciente });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    static async update(req, res) {
+        try {
+            let paciente = req.body;
+            // trata campos do formulário
+
+
+            await Paciente.update(req.params.id, paciente);
+            res.redirect('/paciente');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    static async delete(req, res) {
+        try {
+            await Paciente.delete(req.params.id);
+            res.redirect('/paciente');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 }
 
 module.exports = PacienteController;

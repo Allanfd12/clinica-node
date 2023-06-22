@@ -8,8 +8,8 @@ router.get('/', PacienteController.getAll);
 router.get('/criar', PacienteController.create);
 router.post('/',bodyParser.urlencoded(), PacienteController.save);
 router.get('/:id', PacienteController.getOne);
-/*
-router.post('/', PacienteController.create);
-router.put('/:id', PacienteController.update);
-router.delete('/:id', PacienteController.delete);*/
+router.get('/:id/editar', PacienteController.editar);
+router.post('/:id/update',bodyParser.urlencoded(), PacienteController.update);
+router.get('/:id/excluir', PacienteController.delete);
+
 module.exports = router;
