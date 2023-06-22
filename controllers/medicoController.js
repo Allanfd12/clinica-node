@@ -20,11 +20,16 @@ class MedicoController {
     }
 
     static async create(req, res) {
-        res.render('medico/criar');
+        res.render('medico/criar-teste-back');
     }
     static async save(req, res) {
         try {
-            let medico = await Medico.create(req.body);
+            let medico = req.body;
+            // trata campos do formulário
+            medico.telefone = medico.telefone.replace(/\D/g, '');
+            medico.cpf = medico.cpf.replace(/\D/g, '');
+
+            await Medico.create(medico);
             res.redirect('/medico');
         } catch (error) {
             console.log(error);
