@@ -38,7 +38,7 @@ class MedicoController {
     static async editar(req, res) {
         try {
             let medico = await Medico.findById(req.params.id);
-            res.render('medico/editar-teste-back', { medico: medico });
+            res.render('medico/editar', { medico: medico });
         } catch (error) {
             console.log(error);
         }
