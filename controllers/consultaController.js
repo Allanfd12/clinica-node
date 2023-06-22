@@ -26,7 +26,17 @@ class ConsultaController {
             console.log(error);
         }
     }
-    
+    static async create(req, res) {
+        res.render('consulta/criar');
+    }
+    static async save(req, res) {
+        try {
+            let consulta = await Consulta.create(req.body);
+            res.redirect('/consulta');
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = ConsultaController;
