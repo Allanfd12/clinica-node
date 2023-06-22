@@ -34,6 +34,11 @@ hr.h-color {
 }
 
 .logo-texto {
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.texto-central{
   font-size: 50px;
   color: #20B2AA;
 }
