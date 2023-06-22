@@ -10,6 +10,28 @@ class PacienteController {
             console.log(error);
         }
     }
+
+    static async getOne(req, res) {
+        try {
+            let paciente = await Paciente.findById(req.params.id);
+            res.render('paciente/visualizar', { paciente: paciente });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    static async create(req, res) {
+        res.render('paciente/criar');
+    }
+    
+    static async save(req, res) {
+        try {
+            let paciente = await Paciente.create(req.body);
+            res.redirect('/paciente');
+        } catch (error) {
+            console.log(error);
+        }
+    }
     
 }
 

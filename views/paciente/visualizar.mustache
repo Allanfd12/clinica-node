@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>NOME</th>
+    <th>CPF</th>
+    <th>TELEFONE</th>
+    <th>RUA</th>
+    <th>NUMERO</th>
+    <th>BAIRRO</th>
+    <th>CIDADE</th>
+    <th>ESTADO</th>
+    <th>COMPLEMENTO</th>
+    <th>CEP</th>
+  </tr>
+    {{#paciente}}
+    <tr>
+    <td>{{nome}}</td>
+    <td>{{cpf}}</td>
+    <td>{{telefone}}</td>
+    <td>{{rua}}</td>
+    <td>{{numero}}</td>
+    <td>{{bairro}}</td>
+    <td>{{cidade}}</td>
+    <td>{{estado}}</td>
+    <td>{{complemento}}</td>
+    <td>{{cep}}</td>
+  </tr>
+
+  {{/paciente}}
+  
+
+</table>
+
+</body>
+</html>
