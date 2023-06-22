@@ -21,6 +21,10 @@ class ConsultaController {
     static async getOne(req, res) {
         try {
             let consulta = await Consulta.findById(req.params.id);
+
+            consulta.data = moment(consulta.data).format('DD/MM/YYYY');
+            consulta.hora = moment(consulta.hora, 'HH:mm:ss').format('HH:mm');
+
             res.render('consulta/visualizar', { consulta: consulta });
         } catch (error) {
             console.log(error);
@@ -41,7 +45,11 @@ class ConsultaController {
     static async editar(req, res) {
         try {
             let consulta = await Consulta.findById(req.params.id);
-            res.render('consulta/editar-teste-back', { consulta: consulta });
+
+            consulta.data = moment(consulta.data).format('YYYY-MM-DD');
+            consulta.hora = moment(consulta.hora, 'HH:mm:ss').format('HH:mm');
+
+            res.render('consulta/editar', { consulta: consulta });
         } catch (error) {
             console.log(error);
         }

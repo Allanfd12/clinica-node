@@ -63,6 +63,13 @@ class PacienteController {
         }
     }
 
+    static async search() {
+        try {
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = PacienteController;

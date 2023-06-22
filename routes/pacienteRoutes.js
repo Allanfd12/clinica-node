@@ -11,5 +11,6 @@ router.get('/:id', PacienteController.getOne);
 router.get('/:id/editar', PacienteController.editar);
 router.post('/:id/update',bodyParser.urlencoded(), PacienteController.update);
 router.get('/:id/excluir', PacienteController.delete);
+router.get('/search', PacienteController.search);
 
 module.exports = router;
