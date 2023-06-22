@@ -18,7 +18,23 @@ class MedicoController {
             console.log(error);
         }
     }
+
+    static async create(req, res) {
+        res.render('medico/criar');
+    }
+    static async save(req, res) {
+        try {
+            // get data from form post
+            console.log(req.body);
+            return;
+            let medico = await Medico.create(req.body);
+            res.redirect('/medicos');
+        } catch (error) {
+            console.log(error);
+        }
+    }
     
 }
 
 module.exports = MedicoController;
+
