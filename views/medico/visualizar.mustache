@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>nome</th>
+    <th>cpf</th>
+    <th>telefone</th>
+    <th>crm</th>
+    <th>especialidade</th>
+  </tr>
+    {{#medico}}
+    <tr>
+    <td>{{nome}}</td>
+    <td>{{cpf}}</td>
+    <td>{{telefone}}</td>
+    <td>{{crm}}</td>
+    <td>{{especialidade}}</td>
+  </tr>
+
+  {{/medico}}
+  
+
+</table>
+
+</body>
+</html>
