@@ -36,7 +36,8 @@ async function connect() {
             cidade varchar(255) NOT NULL,
             estado varchar(255) NOT NULL,
             complemento varchar(255) NOT NULL,
-            cep varchar(255) NOT NULL
+            cep varchar(255) NOT NULL,
+            deleted_at datetime DEFAULT NULL
         );
     `);
     console.log("Tabela 'pacientes' criada!");
@@ -48,7 +49,8 @@ async function connect() {
             cpf varchar(11) NOT NULL UNIQUE,
             telefone varchar(11) NOT NULL,
             crm varchar(255) NOT NULL,
-            especialidade varchar(255) NOT NULL
+            especialidade varchar(255) NOT NULL,
+            deleted_at datetime DEFAULT NULL
         );
     `);
     console.log("Tabela 'medicos' criada!");
