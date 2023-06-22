@@ -12,7 +12,7 @@ class ConsultaController {
                 consulta.hora = moment(consulta.hora, 'HH:mm:ss').format('HH:mm');
             });
 
-            res.render('consulta', { consultas: consultas });
+            res.render('layout/consulta', { consultas: consultas });
         } catch (error) {
             console.log(error);
         }
@@ -37,6 +37,28 @@ class ConsultaController {
             console.log(error);
         }
     }
+
+    static async editar(req, res) {
+        try {
+            let consulta = await Consulta.findById(req.params.id);
+            res.render('consulta/editar-teste-back', { consulta: consulta });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    static async update(req, res) {
+        try {
+            let consulta = req.body;
+            // trata campos do formulário
+
+
+            await Consulta.update(req.params.id, consulta);
+            res.redirect('/consulta');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 }
 
 module.exports = ConsultaController;
