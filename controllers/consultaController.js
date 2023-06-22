@@ -12,7 +12,7 @@ class ConsultaController {
                 consulta.hora = moment(consulta.hora, 'HH:mm:ss').format('HH:mm');
             });
 
-            res.render('consulta', { consultas: consultas });
+            res.render('layout/consulta', { consultas: consultas });
         } catch (error) {
             console.log(error);
         }
