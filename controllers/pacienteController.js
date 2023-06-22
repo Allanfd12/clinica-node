@@ -26,7 +26,12 @@ class PacienteController {
     
     static async save(req, res) {
         try {
-            let paciente = await Paciente.create(req.body);
+            let paciente = req.body;
+
+            paciente.telefone = paciente.telefone.replace(/\D/g, '');
+            paciente.cpf = paciente.cpf.replace(/\D/g, '');
+
+            await Paciente.create(paciente);
             res.redirect('/paciente');
         } catch (error) {
             console.log(error);
@@ -45,8 +50,8 @@ class PacienteController {
         try {
             let paciente = req.body;
             // trata campos do formulário
-            medico.telefone = medico.telefone.replace(/\D/g, '');
-            medico.cpf = medico.cpf.replace(/\D/g, '');
+            paciente.telefone = paciente.telefone.replace(/\D/g, '');
+            paciente.cpf = paciente.cpf.replace(/\D/g, '');
 
             await Paciente.update(req.params.id, paciente);
             res.redirect('/paciente');
