@@ -58,6 +58,14 @@ class ConsultaController {
             console.log(error);
         }
     }
+    static async delete(req, res) {
+        try {
+            await Consulta.delete(req.params.id);
+            res.redirect('/consulta');
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 }
 

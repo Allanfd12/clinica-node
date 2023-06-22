@@ -56,6 +56,15 @@ class MedicoController {
             console.log(error);
         }
     }
+    static async delete(req, res) {
+        try {
+            await Medico.delete(req.params.id);
+    
+            res.redirect('/medico');
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = MedicoController;
