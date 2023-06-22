@@ -20,7 +20,7 @@ class MedicoController {
     }
 
     static async create(req, res) {
-        res.render('medico/criar-teste-back');
+        res.render('medico/criar');
     }
     static async save(req, res) {
         try {
