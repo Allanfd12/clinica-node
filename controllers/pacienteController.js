@@ -10,6 +10,10 @@ class PacienteController {
             console.log(error);
         }
     }
+
+    static async criar(req, res) {
+        
+    }
     
 }
 
