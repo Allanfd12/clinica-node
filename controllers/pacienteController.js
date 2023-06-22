@@ -20,8 +20,17 @@ class PacienteController {
         }
     }
 
-    static async criar(req, res) {
-        
+    static async create(req, res) {
+        res.render('paciente/criar');
+    }
+    
+    static async save(req, res) {
+        try {
+            let paciente = await Paciente.create(req.body);
+            res.redirect('/paciente');
+        } catch (error) {
+            console.log(error);
+        }
     }
     
 }
