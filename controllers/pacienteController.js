@@ -36,7 +36,7 @@ class PacienteController {
     static async editar(req, res) {
         try {
             let paciente = await Paciente.findById(req.params.id);
-            res.render('paciente/editar-teste-back', { paciente: paciente });
+            res.render('paciente/editar', { paciente: paciente });
         } catch (error) {
             console.log(error);
         }
@@ -45,7 +45,8 @@ class PacienteController {
         try {
             let paciente = req.body;
             // trata campos do formulário
-
+            medico.telefone = medico.telefone.replace(/\D/g, '');
+            medico.cpf = medico.cpf.replace(/\D/g, '');
 
             await Paciente.update(req.params.id, paciente);
             res.redirect('/paciente');
