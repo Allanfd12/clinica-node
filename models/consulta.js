@@ -18,6 +18,10 @@ class Consulta {
         var result = await global.connection.query(`UPDATE consultas SET ? WHERE id = ${id}`, consulta);
         return result[0];
     }
+    static async delete(id) {
+        var result = await global.connection.query(`DELETE FROM consultas WHERE id = ${id}`);
+        return result[0];
+    }
 }
 
 module.exports = Consulta;

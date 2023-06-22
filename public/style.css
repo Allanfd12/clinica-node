@@ -1,0 +1,66 @@
+
+body {
+    background: white;
+    font-size: large;
+}
+
+input.form-control{ width: 300px!important; }
+
+#side_nav {
+    background: #20B2AA;
+    min-width: 200px;
+    max-width: 200px;
+}
+.navbar-cima {
+    min-height: 100vh;
+    width: 100%;
+}
+
+hr.h-color {
+    background: white;
+}
+
+.sidebar li.active {
+    background: white;
+    border-radius: 10px;
+}
+
+.sidebar li.active a, .sidebar li.active a:hover {
+    color: black;
+}
+
+.sidebar li a {
+    color: white;
+}
+
+.logo-texto {
+    font-size: 22px;
+    color: white;
+}
+
+.icon {
+    vertical-align: top;
+}
+
+.linha-home {
+    color: #20B2AA;
+    background-color: #20B2AA;
+    height: 3px;
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.btn-primary {
+    background-color: #20B2AA;
+    color: white;
+}
+
+.invalid {
+    border-color: red !important;
+}
+
+.required:after {
+    content:" *"; 
+    color: red;
+  }
