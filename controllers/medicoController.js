@@ -5,7 +5,7 @@ class MedicoController {
     static async getAll(req, res) {
         try {
             let medicos = await Medico.find();
-            res.render('medico', { medicos: medicos });
+            res.render('layout/medico', { medicos: medicos });
         } catch (error) {
             console.log(error);
         }
@@ -20,15 +20,17 @@ class MedicoController {
     }
 
     static async create(req, res) {
-        res.render('medico/criar');
+        res.render('medico/criar-teste-back');
     }
     static async save(req, res) {
         try {
-            // get data from form post
-            console.log(req.body);
-            return;
-            let medico = await Medico.create(req.body);
-            res.redirect('/medicos');
+            let medico = req.body;
+            // trata campos do formulário
+            medico.telefone = medico.telefone.replace(/\D/g, '');
+            medico.cpf = medico.cpf.replace(/\D/g, '');
+
+            await Medico.create(medico);
+            res.redirect('/medico');
         } catch (error) {
             console.log(error);
         }
