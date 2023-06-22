@@ -10,6 +10,7 @@ class PacienteController {
             console.log(error);
         }
     }
+
     static async getOne(req, res) {
         try {
             let paciente = await Paciente.findById(req.params.id);
@@ -17,6 +18,10 @@ class PacienteController {
         } catch (error) {
             console.log(error);
         }
+    }
+
+    static async criar(req, res) {
+        
     }
     
 }
