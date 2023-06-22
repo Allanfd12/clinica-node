@@ -88,8 +88,8 @@
                 <td>{{crm}}</td>
                 <td>{{especialidade}}</td>
                 <td style="text-align: right; padding-right: 30px;">
-                    <a href="" class="link-secondary"><span class="material-symbols-outlined fs-4">edit_square</span></a>
-                    <a href="" class="link-secondary"><span class="material-symbols-outlined fs-4">visibility</span></a>
+                    <a href="/medico/{{id}}/editar" class="link-secondary"><span class="material-symbols-outlined fs-4">edit_square</span></a>
+                    <a href="/medico/{{id}}" class="link-secondary"><span class="material-symbols-outlined fs-4">visibility</span></a>
                     <a type="button" class="link-secondary" data-bs-toggle="modal" data-bs-target="#idModal{{id}}"><span class="material-symbols-outlined fs-4">delete</span></a>
 
                     <!-- Modal -->
@@ -101,7 +101,7 @@
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                        <p style="text-align: left!important;">Tem certeza que deseja excluir o Médico {{$medico->nome}} ?</p>
+                                        <p style="text-align: left!important;">Tem certeza que deseja excluir o Médico {{nome}} ?</p>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -119,14 +119,6 @@
         </table>
     </div>
     <hr style="margin-left: 5%; margin-top: 1%; margin-bottom: 1%; width: 90%;" class="linha-home">
-    <script>
-    
-    //     console.log('oasai');
-    
-    //     var myModal = new bootstrap.Modal('#modal_delete');
-    
-    //     myModal.show();
-    // </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     <script src="/js/jquery.mask.min.js"></script>
