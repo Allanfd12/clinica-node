@@ -4,8 +4,9 @@ class MedicoController {
 
     static async getAll(req, res) {
         try {
-            let medicos = await Medico.find();
-            res.render('layout/medico', { medicos: medicos });
+            let query = req.query?.search?? '';
+            let medicos = await Medico.find(query);
+            res.render('layout/medico', { medicos: medicos, query: query});
         } catch (error) {
             console.log(error);
         }
