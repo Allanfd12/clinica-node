@@ -20,12 +20,17 @@ hr.h-color {
   background: white;
 }
 
+/* #menu-lateral:active{
+  background: white !important;
+  border-radius: 10px !important;
+} */
+
 .sidebar li.active {
-  background: white;
-  border-radius: 10px;
+  background: white !important;
+  border-radius: 10px !important;
 }
 
-.sidebar li.active a, .sidebar li.active a:hover {
+.sidebar li.active a, li.active a:hover {
   color: black;
 }
 
