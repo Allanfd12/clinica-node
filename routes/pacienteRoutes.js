@@ -6,10 +6,10 @@ const router = express.Router();
 
 router.get('/', PacienteController.getAll);
 router.get('/criar', PacienteController.create);
-router.post('/',bodyParser.urlencoded(), PacienteController.save);
+router.post('/',bodyParser.urlencoded({extended: true}), PacienteController.save);
 router.get('/:id', PacienteController.getOne);
 router.get('/:id/editar', PacienteController.editar);
-router.post('/:id/update',bodyParser.urlencoded(), PacienteController.update);
+router.post('/:id/update',bodyParser.urlencoded({extended: true}), PacienteController.update);
 router.get('/:id/excluir', PacienteController.delete);
 router.get('/search', PacienteController.search);
 

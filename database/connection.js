@@ -1,5 +1,5 @@
 const { pt_BR, fakerPT_BR } = require('@faker-js/faker');// Gerador de dados aleatórios
-
+require('dotenv').config();
 //Função para conectar no banco de dados local
 async function connect() {
     if(global.connection && global.connection.state !== 'disconnected')
@@ -7,11 +7,11 @@ async function connect() {
 
     const mysql = require('mysql2/promise');
     const connection = await mysql.createConnection({
-        host: 'localhost',
-        port: '3306', //coloque a porta do seu banco de dados
-        user: 'root', //coloque o seu usuário
-        password: '', //coloque a sua senha
-        database: 'clinica' //crie essa database no seu banco de dados
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT, //coloque a porta do seu banco de dados
+        user: process.env.DB_USER, //coloque o seu usuário
+        password: process.env.DB_PASSWORD, //coloque a sua senha
+        database: process.env.DB_DATABASE //crie essa database no seu banco de dados
     });
 
     console.log("Conectou no MySQL!");
