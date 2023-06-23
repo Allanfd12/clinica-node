@@ -12,9 +12,10 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../../stylesheets/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 
     <title>Consulta</title>
 </head>
@@ -64,14 +65,14 @@
                 <div class="row">
                     <div class="col-md-4 mb-4" >
                         <label for="nome" class="form-label">Paciente</label>
-                        <select id="ajaxselectPaciente" class="js-states form-control" required>
-                            <option selected>{{nome_paciente}}</option>
+                        <select id="ajaxselectPaciente" class="js-states form-control" name="paciente_id" required>
+                            <option selected value="{{paciente_id}}">{{nome_paciente}}</option>
                         </select>
                     </div>
                     <div class="col-md-4 mb-4" >
                         <label for="nome" class="form-label">Médico</label>
-                        <select id="ajaxselectMedico" class="js-states form-control" required>
-                            <option selected>{{nome_medico}}</option>
+                        <select id="ajaxselectMedico" class="js-states form-control" name="medico_id"  required>
+                            <option selected value="{{medico_id}}" >{{nome_medico}}</option>
                         </select>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ class Medico {
         return result[0];
     }
     static async seachByName(nome) {
-        var result = await global.connection.query(`SELECT id, nome FROM medicos WHERE nome LIKE '%${nome}%' and deleted_at is null limit 10`);
+        var result = await global.connection.query(`SELECT id, nome as text FROM medicos WHERE nome LIKE '%${nome}%' and deleted_at is null limit 10`);
         return result[0];
     }
 }

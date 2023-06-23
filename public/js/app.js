@@ -1,3 +1,6 @@
+var pacientesSearchUrl = '/paciente/search';
+var medicosSearchUrl = '/medico/search';
+
 $(document).ready(function () {
     $('.cpf').mask('000.000.000-00');
     $('.telefone').mask('(00) 00000-0000');
@@ -218,4 +221,48 @@ $(document).ready(function () {
 
         return true;
     }
+
+    $('#ajaxselectPaciente').select2({
+        placeholder: "Selecione um Paciente",
+        ajax: {
+            url: pacientesSearchUrl,
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+                return {
+                    nome: params.term,
+                }
+            },
+            processResults: function (data, params) {
+                return {
+                    results: data
+                }
+            },
+            cache: true
+        }
+    });
+
+    $('#ajaxselectMedico').select2({
+        placeholder: "Selecione um Médico",
+        ajax: {
+            url: medicosSearchUrl,
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+                return {
+                    nome: params.term
+                }
+            },
+            processResults: function (data, params) {
+                return {
+                    results: data,
+                }
+            },
+            cache: true
+        }
+    });
 });
+
+
+
+

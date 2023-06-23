@@ -12,9 +12,10 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../../stylesheets/style.css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <title>Consulta</title>
 </head>
@@ -63,12 +64,12 @@
                 <div class="row">
                     <div class="col-md-4 mb-4" >
                         <label for="nome" class="form-label">Paciente</label>
-                        <select id="ajaxselectPaciente" class="js-states form-control" required>
+                        <select id="ajaxselectPaciente" class="js-states form-control" name="paciente_id" required>
                         </select>
                     </div>
                     <div class="col-md-4 mb-4" >
                         <label for="nome" class="form-label">Médico</label>
-                        <select id="ajaxselectMedico" class="js-states form-control" required>
+                        <select id="ajaxselectMedico" class="js-states form-control" name="medico_id" required>
                         </select>
                     </div>
                 </div>
@@ -98,36 +99,6 @@
     <script src="/js/jquery.mask.min.js"></script>
     <script src="/js/app.js"></script>
 
-    <script>
-        var pacientesSearchUrl = "/paciente/search";
-
-        $(document).ready(function() {
-            $('#ajaxselectPaciente').select2({
-                placeholder: "Selecione um Paciente",
-                ajax: {
-                    url: pacientesSearchUrl,
-                    dataType: 'json',
-                    delay: 250,
-                    data: function (params) {
-                        return {
-                            searchItem: params.term,
-                            page: params.page,
-                        }
-                    },
-                    processResults: function (data, params) {
-                        params.page = params.page || 1;
-                        return {
-                            results: data.data,
-                            pagination: {
-                                more: data.last_page != params.page
-                            }
-                        }
-                    },
-                    cache: true
-                }
-            });
-        });
-    </script>
 
 </body>
 

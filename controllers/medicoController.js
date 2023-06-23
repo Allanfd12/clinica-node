@@ -68,7 +68,7 @@ class MedicoController {
     }
     static async search(req, res) {
         try {
-            let medicos = await Medico.seachByName(req.query.nome);
+            let medicos = await Medico.seachByName(req.query?.nome?? '');
             res.json(medicos);
         } catch (error) {
             console.log(error);
