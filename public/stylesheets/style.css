@@ -75,3 +75,13 @@ hr.h-color {
   align-items: center !important;
   margin-top: 200px !important;
 }
+
+.agendada {
+  background-color: #fff;
+}
+.hoje {
+  background-color: #00fff238;
+}	
+.realizada {
+  background-color: #00bdb32d;
+}
