@@ -60,27 +60,27 @@
             Cadastrar os dados da consulta
         </h4>
         <div class="card-body">
-            <form action="#" method="POST">
+            <form action="./" method="POST">
                 <div class="row">
                     <div class="col-md-4 mb-4" >
                         <label for="nome" class="form-label">Paciente</label>
-                        <select id="ajaxselectPaciente" class="js-states form-control" name="paciente_id" required>
+                        <select id="ajaxselectPaciente" class="js-states form-control" name="id_paciente" required>
                         </select>
                     </div>
                     <div class="col-md-4 mb-4" >
                         <label for="nome" class="form-label">Médico</label>
-                        <select id="ajaxselectMedico" class="js-states form-control" name="medico_id" required>
+                        <select id="ajaxselectMedico" class="js-states form-control" name="id_medico" required>
                         </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-4" >
                         <label for="data" class="form-label">Data da consulta</label>
-                        <input type="date" class="form-control" name="data" value="" >
+                        <input type="date" class="form-control" name="data" value="" required>
                     </div>
                     <div class="col-md-4 mb-4" >
                         <label for="hora" class="form-label">Hora da consulta</label>
-                        <input type="time" class="form-control" name="hora" value="" >
+                        <input type="time" class="form-control" name="hora" value="" required>
                     </div>
                 </div>
                     <div class="d-flex justify-content-between">

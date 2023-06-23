@@ -22,7 +22,7 @@ class Medico {
         var result = await global.connection.query(`UPDATE medicos SET deleted_at = NOW() WHERE id = ${id}`);
         return result[0];
     }
-    static async seachByName(nome) {
+    static async searchByName(nome) {
         var result = await global.connection.query(`SELECT id, nome as text FROM medicos WHERE nome LIKE '%${nome}%' and deleted_at is null limit 10`);
         return result[0];
     }

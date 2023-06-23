@@ -60,19 +60,19 @@
             Editar os dados da consulta
         </h4>
         <div class="card-body">
-            <form action="#" method="POST">
+            <form action="./update" method="POST">
               {{#consulta}}
                 <div class="row">
                     <div class="col-md-4 mb-4" >
                         <label for="nome" class="form-label">Paciente</label>
-                        <select id="ajaxselectPaciente" class="js-states form-control" name="paciente_id" required>
-                            <option selected value="{{paciente_id}}">{{nome_paciente}}</option>
+                        <select id="ajaxselectPaciente" class="js-states form-control" name="id_paciente" required>
+                            <option selected value="{{id_paciente}}">{{nome_paciente}}</option>
                         </select>
                     </div>
                     <div class="col-md-4 mb-4" >
                         <label for="nome" class="form-label">Médico</label>
-                        <select id="ajaxselectMedico" class="js-states form-control" name="medico_id"  required>
-                            <option selected value="{{medico_id}}" >{{nome_medico}}</option>
+                        <select id="ajaxselectMedico" class="js-states form-control" name="id_medico" required>
+                            <option selected value="{{id_paciente}}" >{{nome_medico}}</option>
                         </select>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                 </div>
               {{/consulta}}
                     <div class="d-flex justify-content-between">
-                            <a class="btn btn-primary d-grid gap-2 col-3 mx-auto" href="/paciente">Voltar</a>
+                            <a class="btn btn-primary d-grid gap-2 col-3 mx-auto" href="/consulta">Voltar</a>
                             <button class="btn btn-primary d-grid gap-2 col-3 mx-auto" type="submit">Atualizar</button>
                     </div>
                 </div>
