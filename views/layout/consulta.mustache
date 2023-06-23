@@ -25,10 +25,6 @@
                     </a>
                 </div>
             <ul class="list-unstyled px-3">
-                <li class="p-1 mb-2"><a href="#" class="text-decoration-none d-block">
-                </span></a></li>
-                <li class="p-1 mb-2"><a href="#" class="text-decoration-none d-block">
-                </span></a></li>
                 <li class="p-1 mb-2"><a href="/consulta" class="text-decoration-none d-block"><span
                             class="material-symbols-outlined icon">
                             medical_services
@@ -80,7 +76,7 @@
             </thead>
             <tbody>
             {{#consultas}}
-            <tr>
+            <tr class="{{classe}}">
                 <td style="text-align: left; padding-left: 30px;">{{nome_paciente}}</td>
                 <td>{{nome_medico}}</td>
                 <td>{{data}}</td>
