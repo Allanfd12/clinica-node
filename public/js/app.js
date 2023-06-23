@@ -28,7 +28,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.cep').on('blur', function () {
+    $('.cep').on('input', function () {
         var cep = $(this).val().replace(/\D/g, '');
         if (cep.length === 8) {
             $.ajax({
@@ -38,8 +38,13 @@ $(document).ready(function () {
                     if (!data.erro) {
                         // CEP válido
                         $('.cep').removeClass('invalid-cep');
-                        $('.message-cep').text('CEP válido!');
+                        $('.message-cep').text('Endereço Prenchido!');
                         $('.message-cep').css('color', 'green');
+                        $('.rua').val(data.logradouro);
+                        $('.bairro').val(data.bairro);
+                        $('.cidade').val(data.localidade);
+                        $('.estado').val(data.uf);
+                        $('.numero').focus();
                     } else {
                         // CEP inválido
                         $('.cep').addClass('invalid-cep');
