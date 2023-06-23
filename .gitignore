@@ -3,3 +3,6 @@ node_modules
 
 # Pasta de confguração do vscode
 .vscode
+
+#variaveis de ambiente
+.env

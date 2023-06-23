@@ -6,10 +6,10 @@ const router = express.Router();
 
 router.get('/', MedicoController.getAll);
 router.get('/criar', MedicoController.create);
-router.post('/',bodyParser.urlencoded(), MedicoController.save);
+router.post('/',bodyParser.urlencoded({extended: true}), MedicoController.save);
 router.get('/:id', MedicoController.getOne);
 router.get('/:id/editar', MedicoController.editar);
-router.post('/:id/update',bodyParser.urlencoded(), MedicoController.update);
+router.post('/:id/update',bodyParser.urlencoded({extended: true}), MedicoController.update);
 router.get('/:id/excluir', MedicoController.delete);
 
 
