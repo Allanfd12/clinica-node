@@ -6,7 +6,6 @@ class Medico {
         return medicos[0];
     
     }
-
     static async findById(id) {
         var medicos = await global.connection.query(`SELECT * FROM medicos WHERE id = ${id} and deleted_at is null`);
         return medicos[0][0];
@@ -21,6 +20,10 @@ class Medico {
     }
     static async delete(id) {
         var result = await global.connection.query(`UPDATE medicos SET deleted_at = NOW() WHERE id = ${id}`);
+        return result[0];
+    }
+    static async seachByName(nome) {
+        var result = await global.connection.query(`SELECT id, nome FROM medicos WHERE nome LIKE '%${nome}%' and deleted_at is null limit 10`);
         return result[0];
     }
 }

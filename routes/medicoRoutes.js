@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/', MedicoController.getAll);
 router.get('/criar', MedicoController.create);
+router.get('/search', MedicoController.search);
 router.post('/',bodyParser.urlencoded({extended: true}), MedicoController.save);
 router.get('/:id', MedicoController.getOne);
 router.get('/:id/editar', MedicoController.editar);

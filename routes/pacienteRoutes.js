@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/', PacienteController.getAll);
 router.get('/criar', PacienteController.create);
+router.get('/search', PacienteController.search);
 router.post('/',bodyParser.urlencoded({extended: true}), PacienteController.save);
 router.get('/:id', PacienteController.getOne);
 router.get('/:id/editar', PacienteController.editar);

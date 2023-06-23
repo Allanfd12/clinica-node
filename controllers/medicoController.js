@@ -65,6 +65,14 @@ class MedicoController {
             console.log(error);
         }
     }
+    static async search(req, res) {
+        try {
+            let medicos = await Medico.seachByName(req.query.nome);
+            res.json(medicos);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = MedicoController;

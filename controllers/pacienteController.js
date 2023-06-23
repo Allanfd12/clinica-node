@@ -68,9 +68,10 @@ class PacienteController {
         }
     }
 
-    static async search() {
-        try {
-            
+    static async search(req, res) {
+        try { 
+            let pacientes = await Paciente.seachByName(req.query.nome);
+            res.json(pacientes);
         } catch (error) {
             console.log(error);
         }

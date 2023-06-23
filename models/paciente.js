@@ -22,6 +22,10 @@ class Paciente {
         var result = await global.connection.query(`UPDATE pacientes SET deleted_at = NOW() WHERE id = ${id}`);
         return result[0];
     }
+    static async seachByName(nome) {
+        var result = await global.connection.query(`SELECT id, nome FROM pacientes WHERE nome LIKE '%${nome}%' and deleted_at is null limit 10`);
+        return result[0];
+    }
 }
 
 module.exports = Paciente;
