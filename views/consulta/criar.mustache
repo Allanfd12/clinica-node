@@ -106,7 +106,30 @@
         var pacientesSearchUrl = "/paciente/search";
 
         $(document).ready(function() {
-            $('#ajaxselectPaciente').select2();
+            $('#ajaxselectPaciente').select2({
+                placeholder: "Selecione um Paciente",
+                ajax: {
+                    url: pacientesSearchUrl,
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            searchItem: params.term,
+                            page: params.page,
+                        }
+                    },
+                    processResults: function (data, params) {
+                        params.page = params.page || 1;
+                        return {
+                            results: data.data,
+                            pagination: {
+                                more: data.last_page != params.page
+                            }
+                        }
+                    },
+                    cache: true
+                }
+            });
         });
     </script>
 

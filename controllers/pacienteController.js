@@ -70,12 +70,25 @@ class PacienteController {
     }
 
     static async search(req, res) {
-        try { 
-            let pacientes = await Paciente.seachByName(req.query.nome);
-            res.json(pacientes);
-        } catch (error) {
-            console.log(error);
-        }
+        const searchTerm = req.query.searchItem || ''; // Obtém o termo de pesquisa da query string
+
+        // Execute a consulta no banco de dados
+        const query = `SELECT * FROM pacientes WHERE nome LIKE '%${searchTerm}%'`;
+        connection.query(query, (err, results) => {
+            if (err) {
+                console.error('Erro ao executar a consulta no banco de dados:', err);
+                return res.status(500).json({ error: 'Erro ao buscar pacientes.' });
+            }
+
+            // Formate os resultados no formato esperado pelo select2
+            const formattedResults = results.map((paciente) => ({
+                id: paciente.id,
+                text: paciente.nome
+            }));
+
+            // Envie a resposta com os resultados formatados
+            res.json({ data: formattedResults });
+        });
     }
 }
 
