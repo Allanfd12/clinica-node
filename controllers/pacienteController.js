@@ -4,8 +4,9 @@ class PacienteController {
 
     static async getAll(req, res) {
         try {
-            let pacientes = await Paciente.find();
-            res.render('layout/pacientes', { pacientes: pacientes });
+            let query = req.query?.search?? '';
+            let pacientes = await Paciente.find(query);
+            res.render('layout/pacientes', { pacientes: pacientes , query: query});
         } catch (error) {
             console.log(error);
         }

@@ -5,14 +5,15 @@ class ConsultaController {
 
     static async getAll(req, res) {
         try {
-            let consultas = await Consulta.find();
+            let query = req.query?.search?? '';
+            let consultas = await Consulta.find(query);
 
             consultas.forEach(consulta => {
                 consulta.data = moment(consulta.data).format('DD/MM/YYYY');
                 consulta.hora = moment(consulta.hora, 'HH:mm:ss').format('HH:mm');
             });
 
-            res.render('layout/consulta', { consultas: consultas });
+            res.render('layout/consulta', { consultas: consultas, query: query });
         } catch (error) {
             console.log(error);
         }

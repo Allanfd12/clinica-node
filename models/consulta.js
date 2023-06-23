@@ -2,8 +2,8 @@ var db = require('../database/connection');
 
 class Consulta {
 
-    static async find() {
-        var consultas = await global.connection.query(`SELECT c.*, p.nome AS nome_paciente, m.nome AS nome_medico FROM consultas c INNER JOIN pacientes p ON c.id_paciente = p.id INNER JOIN medicos m ON c.id_medico = m.id`);
+    static async find(query) {
+        var consultas = await global.connection.query(`SELECT c.*, p.nome AS nome_paciente, m.nome AS nome_medico FROM consultas c INNER JOIN pacientes p ON c.id_paciente = p.id INNER JOIN medicos m ON c.id_medico = m.id WHERE p.nome LIKE '%${query}%' or m.nome LIKE '%${query}%'`);
         return consultas[0];
     }
     static async findById(id) {
